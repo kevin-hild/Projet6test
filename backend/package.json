@@ -1,0 +1,26 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+        "postinstall": "node decryptEnv.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "crypto-js": "^4.2.0",
+        "dotenv": "^16.4.5",
+        "express": "^5.0.1",
+        "express-rate-limit": "^7.4.0",
+        "express-validator": "^7.2.0",
+        "fs": "^0.0.1-security",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.7.0",
+        "mongoose-unique-validator": "^5.0.1",
+        "multer": "^1.4.5-lts.1",
+        "sharp": "^0.33.5",
+        "validator": "^13.12.0"
+    }
+}
