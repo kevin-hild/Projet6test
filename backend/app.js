@@ -1,6 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const booksRoutes = require('./routes/books');
+const userRoutes = require('./routes/user');
+const path = require('path');
 
 // Connexion à la base de données MongoDB hébergée via MongoDB Atlas
 mongoose.connect('mongodb+srv://dotadouze:t394QxMcrKcDeyII@cluster0.tyujc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
@@ -21,5 +24,8 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(express.json());
 
+app.use('/api/books', booksRoutes);
+app.use('/api/auth', userRoutes);
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 module.exports = app;
